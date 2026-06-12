@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+===============================
+body area
+===============================
+*/
+body {
+    display: flex;
+    background-color: #FFF5F7;
+    color: #8A4B5E;
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    flex-direction: column;
+}
+
+.gradient-helper {
+    background: linear-gradient(#FFB6C1, #F8DDE6, #FFF5F7);
+}
+
+/* 
+===============================
+header area
+===============================
+*/
+.header-top {
+    display: flex;
+    justify-content: space-between; /* Empurra a logo para a esquerda e o menu para a direita */
+    align-items: center; /* Alinha ambos verticalmente no centro */
+    padding: 20px 40px; /* Dá um espaço nas laterais e acima */
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #5A3E3E;    
+}
+
+/* 
+===============================
+main area
+===============================
+*/
+.btn-encomenda {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #FF6B9D;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-encomenda:hover {
+    background-color: #FFB6C1;
+}
+
+
+
+
+
+/* 
+===============================
+footer area
+===============================
+*/
+footer {
+    background-color: #FF6B9D;
+}
+
+.reserva-direitos {
+    background-color: #FFB6C1;
+}
+
