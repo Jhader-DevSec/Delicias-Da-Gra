@@ -46,7 +46,6 @@ FUNDO GRADIENTE (Abaça Header + Banner)
 Header Area
 =============================== */
 header {
-    /* Sombra muito sutil para separar o menu do resto de forma elegante */
     box-shadow: 0 4px 15px rgba(90, 62, 62, 0.05); 
     background-color: transparent; 
 }
@@ -116,14 +115,14 @@ Banner Principal (Hero)
     font-size: 4rem;
     color: var(--pink-primary);
     font-weight: 600;
-    margin-bottom: 25px; /* Distância ideal para o texto de baixo */
+    margin-bottom: 25px; 
 }
 
 .banner-text p {
     font-size: 1.1rem;
     color: var(--text-dark);
     margin-bottom: 5px;
-    line-height: 1.6; /* Melhor leitura */
+    line-height: 1.6; 
 }
 
 .button-banner { 
@@ -148,17 +147,16 @@ Banner Principal (Hero)
 }
 
 .gradient-image {
-    flex: 1.5; /* Aumentado para dar espaço ao bolo crescer */
+    flex: 1.5; 
     display: flex;
     justify-content: flex-end; 
     align-items: center;
 }
 
 .gradient-image img {
-    width: 120%; /* Expande o bolo além do contêiner */
-    max-width: 600px; /* Limite de segurança para monitores muito grandes */
+    width: 120%; 
+    max-width: 600px; 
     height: auto;
-    /* Efeito de esfumaçar em formato circular (Radial) */
     -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%);
     mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%);
 }
@@ -293,7 +291,6 @@ Produtos (Carrosséis)
     overflow-x: auto;
     padding: 15px 5%;
     width: 100%;
-    /* Travas removidas para o Javascript conseguir rolar a página 1px por vez */
 }
 
 .carrosel-slide::-webkit-scrollbar { 
@@ -314,7 +311,6 @@ Produtos (Carrosséis)
     transform: scale(1.03); 
 }
 
-/* Botões do carrossel ajustados e centralizados */
 .prev, .next {
     background-color: var(--pink-primary);
     border: none;
@@ -470,9 +466,6 @@ footer {
     font-size: 0.85rem;
 }
 
-/* ===============================
-Responsividade (Celulares)
-=============================== */
 @media (max-width: 768px) {
     .banner-principal, .about-container, .header-top {
         flex-direction: column;
