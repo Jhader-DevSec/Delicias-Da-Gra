@@ -20,11 +20,6 @@ O layout foi pensado para ser atrativo e focado na conversão de pedidos via Wha
 * **Integração de Mapas:** Iframe nativo e responsivo do Google Maps apontando para o endereço físico do estabelecimento.
 * **Mobile-Friendly:** Adaptação completa do layout para dispositivos móveis utilizando Media Queries.
 
-## 📸 Preview do Projeto
-
-> **Nota:** Adicione aqui o caminho para uma imagem do seu site pronto, por exemplo:
-> `![Preview do Site](./assets/img/preview.png)`
-
 ## ⚙️ Como Executar o Projeto
 
 Como o projeto foi desenvolvido com tecnologias web padrão (HTML, CSS e JS puro), não é necessária nenhuma instalação complexa de dependências.
