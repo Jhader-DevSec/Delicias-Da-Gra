@@ -1,38 +1,67 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===============================
+Importação de Fontes
+=============================== */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Montserrat:wght@400;600;700&display=swap');
+
+/* ===============================
+Variáveis de Cores (Paleta)
+=============================== */
+:root {
+    --bg-light: #FFF5F7;
+    --pink-light: #FFB6C1;
+    --pink-mid: #F8DDE6;
+    --pink-primary: #FF6B9D;
+    --text-dark: #5A3E3E;
+    --text-accent: #8A4B5E;
 }
 
-/* 
-===============================
-body area
-===============================
-*/
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    display: flex;
-    background-color: #FFF5F7;
-    color: #8A4B5E;
-    font-family: 'Lora', serif;
-    font-size: 16px;
-    line-height: 1.6;
-    flex-direction: column;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    overflow-x: hidden;
 }
 
+/* ===============================
+FUNDO GRADIENTE (Abaça Header + Banner)
+=============================== */
 .gradient-helper {
-    background: linear-gradient(#FFB6C1, #F8DDE6, #FFF5F7);
+    background: linear-gradient(180deg, var(--pink-mid) 0%, var(--bg-light) 100%);
+    padding-bottom: 40px;
 }
 
-/* 
-===============================
-header area
-===============================
-*/
+/* ===============================
+Header Area
+=============================== */
+header {
+    /* Sombra muito sutil para separar o menu do resto de forma elegante */
+    box-shadow: 0 4px 15px rgba(90, 62, 62, 0.05); 
+    background-color: transparent; 
+}
+
 .header-top {
     display: flex;
-    justify-content: space-between; /* Empurra a logo para a esquerda e o menu para a direita */
-    align-items: center; /* Alinha ambos verticalmente no centro */
-    padding: 20px 40px; /* Dá um espaço nas laterais e acima */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header-top img { 
+    max-width: 130px; 
 }
 
 nav ul {
@@ -44,43 +73,430 @@ nav ul {
 
 nav ul a {
     text-decoration: none;
-    color: #5A3E3E;    
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: color 0.3s;
 }
 
-/* 
-===============================
-main area
-===============================
-*/
-.btn-encomenda {
+nav ul a:hover { 
+    color: var(--pink-primary); 
+}
+
+/* ===============================
+Banner Principal (Hero)
+=============================== */
+.banner-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 5%;
+    gap: 30px;
+}
+
+.banner-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.letter-style h2 {
+    font-size: 3rem;
+    color: var(--text-dark);
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+.letter-style h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: var(--pink-primary);
+    font-weight: 600;
+    margin-bottom: 25px; /* Distância ideal para o texto de baixo */
+}
+
+.banner-text p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+    line-height: 1.6; /* Melhor leitura */
+}
+
+.button-banner { 
+    margin-top: 25px; 
+}
+
+.button-banner a, .btn-encomenda {
     display: inline-block;
-    text-decoration: none;
-    background-color: #FF6B9D;
+    background-color: var(--pink-primary);
     color: white;
     padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(255, 107, 157, 0.3);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.button-banner a:hover, .btn-encomenda:hover {
+    background-color: var(--text-accent);
+    transform: scale(1.05);
+}
+
+.gradient-image {
+    flex: 1.5; /* Aumentado para dar espaço ao bolo crescer */
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+}
+
+.gradient-image img {
+    width: 120%; /* Expande o bolo além do contêiner */
+    max-width: 600px; /* Limite de segurança para monitores muito grandes */
+    height: auto;
+    /* Efeito de esfumaçar em formato circular (Radial) */
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 70%);
+}
+
+/* ===============================
+Ícones de Vantagens
+=============================== */
+.about-icons {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.5); 
+    padding: 20px 5%;
+    margin: 40px auto 0;
+    max-width: 1200px;
+    border-radius: 15px;
+    gap: 15px;
+}
+
+.about-icons div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.about-icons img {
+    width: 45px;
+    height: 45px;
+}
+
+.about-icons p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* ===============================
+Sobre Nós
+=============================== */
+.sobre-nos {
+    background-color: var(--pink-light);
+    padding: 60px 5%;
+    margin: 40px 0;
     border-radius: 20px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
-.btn-encomenda:hover {
-    background-color: #FFB6C1;
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
+.about-image { 
+    flex: 1; 
+}
 
+.about-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 400px; 
+    object-fit: cover; 
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
 
+.about-content { 
+    flex: 1; 
+}
 
+.about-content .subtitle {
+    font-family: 'Dancing Script', cursive;
+    color: var(--pink-primary);
+    font-size: 2.2rem;
+}
 
-/* 
-===============================
-footer area
-===============================
-*/
+.about-content h2 {
+    font-size: 2.4rem;
+    color: var(--text-dark);
+    line-height: 1.2;
+    margin: 10px 0 20px;
+}
+
+.about-content p { 
+    margin-bottom: 15px; 
+}
+
+.about-info {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.info-card h3 {
+    color: var(--pink-primary);
+    font-size: 1.5rem;
+}
+
+/* ===============================
+Produtos (Carrosséis)
+=============================== */
+.produtos {
+    width: 100%;
+    margin: 60px 0;
+    text-align: center;
+}
+
+.produtos h2 {
+    font-size: 2.4rem;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+}
+
+.carrosel-containet-doces,
+.carrosel-containet-salgados {
+    position: relative;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.carrosel-containet-doces h3,
+.carrosel-containet-salgados h3 {
+    font-size: 1.8rem;
+    color: var(--pink-primary);
+    margin-bottom: 15px;
+}
+
+.carrosel-slide {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 15px 5%;
+    width: 100%;
+    /* Travas removidas para o Javascript conseguir rolar a página 1px por vez */
+}
+
+.carrosel-slide::-webkit-scrollbar { 
+    display: none; 
+}
+
+.carrosel-slide img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 15px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.carrosel-slide img:hover { 
+    transform: scale(1.03); 
+}
+
+/* Botões do carrossel ajustados e centralizados */
+.prev, .next {
+    background-color: var(--pink-primary);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%);
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 10;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.prev:hover, .next:hover {
+    background-color: var(--text-accent);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+.prev::after { content: "◀"; font-size: 14px; }
+.next::after { content: "▶"; font-size: 14px; }
+
+/* ===============================
+Encomendas Banner
+=============================== */
+.encomendas-banner {
+    background-color: var(--pink-mid);
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 50px 20px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.encomendas-banner h2 {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.icon-encomenda img {
+    max-width: 80px; 
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.encomendas-banner p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* ===============================
+Endereço (Mapa)
+=============================== */
+.endereco {
+    max-width: 1200px;
+    margin: 60px auto;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.titulo-endereco span {
+    color: var(--pink-primary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.titulo-endereco h2 {
+    font-size: 2.2rem;
+    color: var(--text-dark);
+    margin: 10px 0 15px;
+}
+
+.mapa-container {
+    margin-top: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ===============================
+Footer
+=============================== */
 footer {
-    background-color: #FF6B9D;
+    background-color: var(--pink-primary);
+    color: white;
+    padding-top: 50px;
+    border-radius: 50px 50px 0 0;
+    margin-top: 60px;
 }
 
-.reserva-direitos {
-    background-color: #FFB6C1;
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 5% 40px;
 }
 
+.footer-logo img {
+    max-width: 140px;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6rem;
+}
+
+.footer-info h3, 
+.footer-pedido h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: var(--bg-light);
+    font-weight: 700;
+}
+
+.footer-info p, 
+.footer-info span,
+.footer-pedido p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.footer-pedido a {
+    display: inline-block;
+    background-color: white;
+    color: var(--pink-primary);
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.footer-pedido a:hover { 
+    background-color: var(--bg-light); 
+}
+
+.footer-copy {
+    background-color: var(--text-accent);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+}
+
+/* ===============================
+Responsividade (Celulares)
+=============================== */
+@media (max-width: 768px) {
+    .banner-principal, .about-container, .header-top {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .gradient-image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .gradient-image img {
+        -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%);
+        mask-image: radial-gradient(circle, rgba(0,0,0,1) 40%, rgba(0,0,0,0) 80%);
+    }
+    
+    .about-icons {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
